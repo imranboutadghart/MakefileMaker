@@ -31,11 +31,11 @@ CPP_SOURCES=$(find . -type f -name "*.cpp")
   # Generate object files list
   echo -n "OBJS ="
   for src in $CPP_SOURCES; do
-    obj="${src%.cpp}.o"
+    obj="bin/${src%.cpp}.o"
     echo -n " $obj"
   done
   for src in $C_SOURCES; do
-    obj="bin/$(src%.c).o"
+    obj="bin/${src%.c}.o"
     echo -n " $obj"
   done
   echo ""
@@ -69,7 +69,7 @@ CPP_SOURCES=$(find . -type f -name "*.cpp")
 
   # Clean rule
   echo "clean:"
-  echo -e "\trm -f \$(BIN_DIR) \$(TARGET)"
+  echo -e "\trm -f \$(BIN_DIR)"
   echo ""
   echo "fclean: clean"
   echo -e "\trm -f \$(TARGET)"
