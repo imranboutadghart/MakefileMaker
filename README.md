@@ -1,3 +1,5 @@
+Found myself needing to create Makefiles repeatedly so decided to automate it
+
 # Maker
 
 Create a Makefile for your project in a flash
@@ -15,7 +17,7 @@ git clone https://github.com/imranboutadghart/MakefileMaker
 ```
 cp MakefileMaker/generate.sh path/to/your/project
 #change the variables in top to suit your needs
-./generate.sh
+bash generate.sh
 ```
 
 ## How it works
