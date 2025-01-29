@@ -13,7 +13,7 @@ CPP_SOURCES=$(find . -type f -name "*.cpp")
   echo "CC = cc"
   echo "CXX = c++"
   echo "CFLAGS =   -I$HEADER_DIR -Wall -Wextra -Werror"
-  echo "CXXFLAGS = -I$HEADER_DIR -Wall -Wextra -Werror"
+  echo "CXXFLAGS = -I$HEADER_DIR -Wall -Wextra -Werror -std=c++98"
   echo ""
   echo "TARGET = $NAME"
   echo ""
