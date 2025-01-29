@@ -10,10 +10,10 @@ CPP_SOURCES=$(find . -type f -name "*.cpp")
 
 # Create the Makefile
 {
-  echo "CC = gcc"
-  echo "CXX = g++"
-  echo "CFLAGS =   -I$HEADER_DIR -Wall -Wextra -Werror -g"
-  echo "CXXFLAGS = -I$HEADER_DIR -Wall -Wextra -Werror -g"
+  echo "CC = cc"
+  echo "CXX = c++"
+  echo "CFLAGS =   -I$HEADER_DIR -Wall -Wextra -Werror"
+  echo "CXXFLAGS = -I$HEADER_DIR -Wall -Wextra -Werror"
   echo ""
   echo "TARGET = $NAME"
   echo ""
@@ -31,11 +31,11 @@ CPP_SOURCES=$(find . -type f -name "*.cpp")
   # Generate object files list
   echo -n "OBJS ="
   for src in $CPP_SOURCES; do
-    obj="$(basename src .cpp).o"
+    obj="${src%.cpp}.o"
     echo -n " $obj"
   done
   for src in $C_SOURCES; do
-    obj="bin/$(basename $src .c).o"
+    obj="bin/$(src%.c).o"
     echo -n " $obj"
   done
   echo ""
@@ -47,7 +47,7 @@ CPP_SOURCES=$(find . -type f -name "*.cpp")
   echo $(dirname $CPP_SOURCES 2> /dev/null) | tr ' ' '\n' | sort -u | tr '\n' ' '
   echo ""
   echo ""
-  echo ".DEFAULT_GOAL := \$(NAME)"
+  echo ".DEFAULT_GOAL := \$(TARGET)"
   echo ""
   echo ""
 
